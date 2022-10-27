@@ -2,10 +2,10 @@ using System;
 
 namespace PokemonApp{
 
-    class Pokemon{
+    class Pokemon {
         
         //Fields - by default they are Private. 
-        public string name {get; set;}
+        string name {get; set;}
         int DexNumber {get; set;}
         string type {get; set;}
         int health {get; set;}
@@ -24,16 +24,6 @@ namespace PokemonApp{
             this.type = PokemonType;
             this.health = PokemonHealth;
             this.ability = PokemonAbility;
-        }
-
-
-        public Pokemon(){
-
-        }
-
-        public Pokemon(string PokemonName){
-            this.name = PokemonName;
-            this.DexNumber = 12;
         }
 
         //Instance method - depends on the state of an instance of that class. Belongs to the object. 
