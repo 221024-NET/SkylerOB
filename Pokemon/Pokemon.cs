@@ -2,32 +2,38 @@ using System;
 
 namespace PokemonApp{
 
-    class Pokemon {
+    class Pokemon : Animal {
         
         //Fields - by default they are Private. 
         public string name {get; set;}
-        public int DexNumber {get; set;}
-        public string type {get; set;}
-        public string ability {get; set;}
+        int DexNumber {get; set;}
+        string type {get; set;}
+        int health {get; set;}
+        string ability {get; set;}
 
         //Static field - every pokemon shares this field and it's value
-        public static string isPokemon = "This is a static field. I'm in fact a pokemon.";
+        public static string isPokemon = "This is a static field. We've been through this, I'm in fact a pokemon.";
         
         //Constructor - method used for object initialization. We pass it the values we want 
         //to set for the object we are creating.
 
-        public Pokemon(string PokemonName, int PokemonNum, string PokemonType, string PokemonAbility = "default?"){
+        public Pokemon(string PokemonName, int PokemonNum, string PokemonType, int PokemonHealth, string PokemonAbility = "default?") : base() {
+
             this.name = PokemonName;
             this.DexNumber = PokemonNum;
             this.type = PokemonType;
+            this.health = PokemonHealth;
             this.ability = PokemonAbility;
         }
 
-        public Pokemon() {
-            //this.name = "Milky Way";
-            //this.DexNumber = 14000000;
-            //this.type = "galaxy";
-            //this.ability = "black hole";
+
+        public Pokemon() : base() {
+
+        }
+
+        public Pokemon(string PokemonName, string color, string habitat) : base( color, habitat ) {
+            this.name = PokemonName;
+            this.DexNumber = 12;
         }
 
         //Instance method - depends on the state of an instance of that class. Belongs to the object. 
@@ -44,6 +50,16 @@ namespace PokemonApp{
         //Method Overriding - ToString()
         public override string ToString(){
             return this.name + " " + this.type;
+        }
+
+        public override int CountLegs()
+        {
+            return this.numLegs;
+        }
+
+        public override string FindColor()
+        {
+            return "blue";
         }
     }
 
