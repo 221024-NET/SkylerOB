@@ -4,3 +4,5 @@ Goals:
 -Have or create an easy way to define pokemon evolution lines.
 -Maintain the simplicity of declaring new Pokemon.
 -(Future) Be able to store unique instances of a pokemon.
+
+cp ./../../trainer_code/w1/PokemonApp/. ./
