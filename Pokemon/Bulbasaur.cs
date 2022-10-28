@@ -5,7 +5,7 @@ namespace PokemonApp {
     class Bulbasaur : Pokemon{
         
         //Fields - by default they are Private. 
-        string nickname {get; set;}// = "Bulbasaur"
+        string nickname {get; set;}// = "Bulba"
         int health {get; set;}
         int speed {get; set;}
         int attack {get; set;}
