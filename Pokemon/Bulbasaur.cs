@@ -6,7 +6,6 @@ namespace PokemonApp {
         
         //Fields - by default they are Private. 
         string nickname {get; set;}// = "Bulba"
-        int health {get; set;}
         int speed {get; set;}
         int attack {get; set;}
         int defense {get; set;}
@@ -17,10 +16,9 @@ namespace PokemonApp {
         //Constructor - method used for object initialization. We pass it the values we want 
         //to set for the object we are creating.
         public Bulbasaur(string nickname, int health, int speed, int attack, int defense)
-            : base("Bulbasaur",1,"electric","static")
+            : base("Bulbasaur",1,"grass",health,"grow flowers")
         {
             this.nickname = nickname;
-            this.health = health;
             this.speed = speed;
             this.attack = attack;
             this.defense = defense;
