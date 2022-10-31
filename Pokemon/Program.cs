@@ -31,11 +31,11 @@ namespace Program{
 
 
             Console.WriteLine("Pupper info: ");
-            IAnimal pupper = new Dog(60, "woof");
-            (Dog)pupper.CountLegs();
-            // Console.WriteLine((Dog)pupper.CountLegs());
-            // Console.WriteLine((Dog)pupper.FindColor());
-            // pupper.Speak();
+            Dog pupper = new Dog(60, "woof");
+            pupper.CountLegs();
+            Console.WriteLine(pupper.CountLegs());
+            Console.WriteLine(pupper.FindColor());
+            pupper.Speak();
 
 /*
             //Calling an Instance method - belongs to the object itself.
