@@ -32,9 +32,10 @@ namespace Program{
 
             Console.WriteLine("Pupper info: ");
             IAnimal pupper = new Dog(60, "woof");
-            Console.WriteLine(pupper.CountLegs());
-            Console.WriteLine(pupper.FindColor());
-            pupper.Speak();
+            (Dog)pupper.CountLegs();
+            // Console.WriteLine((Dog)pupper.CountLegs());
+            // Console.WriteLine((Dog)pupper.FindColor());
+            // pupper.Speak();
 
 /*
             //Calling an Instance method - belongs to the object itself.
