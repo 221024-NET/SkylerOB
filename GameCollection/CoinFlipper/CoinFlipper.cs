@@ -1,6 +1,7 @@
 using System;
+using System.Runtime.ConstrainedExecution;
 
-public class Program
+public class CoinFlipperGame
 {
 	// Fields
 	public int test = 0;
@@ -8,23 +9,15 @@ public class Program
 	// Constructor
 	// Methods
 	// [access modifier] [modifier] [retu type] [method name] ([parameters])
-	public static void Main()
+	public static void Main(string[] args)
 	{
-		bool loop = (1==1);
-		while(loop)
+		while (true)
 		{
 			CoinFlipper();
 			Console.WriteLine("Woudl you like to flip more coins?");
 			Console.WriteLine("Enter 'y' or 'Y' to run again, or anything else to exit.");
 			string playAgain = Console.ReadLine().ToLower();
-			if(playAgain.Equals("y"))
-			{
-				loop = (1==1);
-			}
-			else
-			{
-				loop = (1==0);
-			}
+			if (!playAgain.Equals("y")) return;
 		}
 	}
 	
