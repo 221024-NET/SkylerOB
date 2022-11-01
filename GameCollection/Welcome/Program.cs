@@ -1,5 +1,5 @@
 ﻿using System;
-//using HotAndColdGame;
+using HotAndColdGame;
 
 namespace Welcome
 {
@@ -16,19 +16,21 @@ namespace Welcome
                     Console.WriteLine("Choose the game you want to play by typing the number and pressing 'enter'");
                     Console.WriteLine("1 - CoinFlipper");
                     Console.WriteLine("2 - Hot and Cold");
-                    Console.WriteLine("Any other number to exit Game Collection");
+                    Console.WriteLine("Any other number will exit Game Collection after pressing 'enter'");
                 } while (!Int32.TryParse(Console.ReadLine(), out userInput));
 
                 // 
                 switch (userInput)
                 {
                     case 1:
-                        //CoinFlipper();
+                       CoinFlipper CoinGame = new CoinFlipper();
+                        CoinGame.play();
                         Console.WriteLine("Coin Flipper selected");
                         break;
                     case 2:
-                        //HotAndCold();
                         Console.WriteLine("Hot and Cold selected");
+                        HotAndCold HCGame = new HotAndCold();
+                        HCGame.play();
                         break;
                     default:
                         // player opted to exit
