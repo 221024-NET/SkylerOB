@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.ConstrainedExecution;
 
-public class CoinFlipperGame
+public class CoinFlipper
 {
 	// Fields
 	public int test = 0;
@@ -11,17 +11,22 @@ public class CoinFlipperGame
 	// [access modifier] [modifier] [retu type] [method name] ([parameters])
 	public static void Main(string[] args)
 	{
-		while (true)
-		{
-			CoinFlipper();
-			Console.WriteLine("Woudl you like to flip more coins?");
-			Console.WriteLine("Enter 'y' or 'Y' to run again, or anything else to exit.");
-			string playAgain = Console.ReadLine().ToLower();
-			if (!playAgain.Equals("y")) return;
-		}
-	}
-	
-	public static void CoinFlipper()
+        CoinFlipper Game = new CoinFlipper();
+        Game.play();
+    }
+
+	public void play()
+	{
+        while (true)
+        {
+            CoinFlipperGame();
+            Console.WriteLine("Woudl you like to flip more coins?");
+            Console.WriteLine("Enter 'y' or 'Y' to run again, or anything else to exit.");
+            string playAgain = Console.ReadLine().ToLower();
+            if (!playAgain.Equals("y")) return;
+        }
+    }
+	public static void CoinFlipperGame()
 	{
 		Console.WriteLine("Starting Coin Flipper");
 		
