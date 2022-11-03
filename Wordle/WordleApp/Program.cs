@@ -17,10 +17,9 @@ namespace WordleApp
 
             char[] iSection = "_____".ToCharArray();
             string hidden = GetWord(words,1);
-            //char[] hiddenUpper = hidden.ToUpper().ToCharArray();// Console.WriteLine("ToUpper: " + hiddenUpper);
             //Console.WriteLine(hidden);
 
-            // record number of occurances of a letter
+            /* record number of occurances of a letter */
             Dictionary<char,int> freq = new Dictionary<char,int>();
             foreach(char c in hidden)
             {
@@ -56,7 +55,7 @@ namespace WordleApp
                 string UserInput = Console.ReadLine().ToLower();
                 rounds++;
                 
-                /* check if guess contains matching letters */
+                /* check if guess contains occuring letters */
                 for(int i=0; i<5; i++) {
                     if(hidden.Contains(UserInput[i]) && fCOPY[hidden[i]]>0)
                     {
@@ -77,7 +76,7 @@ namespace WordleApp
                     }
                 }
                 
-                /* check for reoccuring exact matches */
+                /* check for the amount of occuring letters */
                 for(int i=0; i<5; i++) 
                 {
                     if(fCOPY.ContainsKey(iSection[i]))
