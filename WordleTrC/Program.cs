@@ -102,8 +102,8 @@ Console.WriteLine(secret);
 
 // replace adding the player to the records list with checking if the player is already on the list.
 // we should be able to use some method call to accomplish this. 
-records.Add(player);
-
+//records.Add(player);
+            player.AddNewPlaythrough(records);
 
             player.SerializeAsXml(records);
             Console.WriteLine(player.DisplayRecord(playerHistory, records));
