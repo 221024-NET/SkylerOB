@@ -47,14 +47,14 @@ namespace Wordle
             {
                 this.wins++;
                 this.turns[turn]++;
-                this.averageTurns = FindAverage(turn);                
+                this.averageTurns = FindAverage();//turn);                
             }
 
             else
                 this.losses++;
         }
 
-        public double FindAverage(int turn)
+        public double FindAverage()//int turn)
         {
             int sum = 0;
             int count = 0;
@@ -97,6 +97,53 @@ namespace Wordle
             reader.Close();
             return records;
         }
-    }
 
+
+        /*** code additions ***/
+        /* override Equals */
+        public bool Equals(User user2)
+        {
+            if(user2 == null) return false;
+            return (this.userName == user2.userName) && (this.password == user2.password);
+        }
+
+        /* Search List for the given player(which may only be a name and pass) and return the full info */
+        public User FindExistingPlayerByCred(List<User> list, User player)
+        {
+            if(!list.Contains(player)) return null;
+            return list[list.IndexOf(player)];
+        }
+
+        public bool CheckExistingPlayerByCred(List<User> list, User player)
+        {
+            if(!list.Contains(player)) return false;
+            return true;
+        }
+
+        /* adds either
+         * a new player with a new playthrough or
+         * the new playthrough of a reoccuring player
+         */
+        public void AddNewPlaythrough(List<User> list)
+        {
+            //if(!player) return;
+            User found = FindExistingPlayerByCred(list,this);
+            if(found != null)
+            {
+                found.wins += this.wins;
+                found.losses += this.losses;
+                for(int i=1;i<=6;i++) found.turns[i] += this.turns[i];
+                found.averageTurns = FindAverage();
+            }
+            else
+            {
+                list.Add(this);
+            }
+        }
+
+        public static void Main()
+        {
+            
+        }
+    }
 }
