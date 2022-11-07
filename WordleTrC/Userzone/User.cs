@@ -67,7 +67,7 @@ namespace Wordle
             return sum/count;
         }
 
-        public string DisplayRecord(string path, List<User> records)
+        public string DisplayRecord(List<User> records)
         {
             StringBuilder result = new StringBuilder();
             
@@ -126,14 +126,15 @@ namespace Wordle
          */
         public void AddNewPlaythrough(List<User> list)
         {
-            //if(!player) return;
             User found = FindExistingPlayerByCred(list,this);
             if(found != null)
             {
+                list.Remove(found);
                 found.wins += this.wins;
                 found.losses += this.losses;
                 for(int i=1;i<=6;i++) found.turns[i] += this.turns[i];
                 found.averageTurns = FindAverage();
+                list.Add(found);
             }
             else
             {
@@ -141,9 +142,20 @@ namespace Wordle
             }
         }
 
+        /* Main for unit testing */
         public static void Main()
         {
+            List<User> players = new List<User>();
+            User player1 = new User("name","pass");
             
+
+            foreach(User U in players) Console.WriteLine(U.userName);
+            //players.Add(player1);
+            Console.WriteLine(player1.CheckExistingPlayerByCred(players,player1)?"same":"who?");
+            player1.UpdateRecord(true, 5);
+            Console.WriteLine(player1.wins);
+            player1.AddNewPlaythrough(players);
+            foreach(User U in players) Console.WriteLine(U.DisplayRecord(players));
         }
     }
 }
