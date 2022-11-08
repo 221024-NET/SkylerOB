@@ -20,6 +20,15 @@ namespace Wordle
         // Costructors
         public User (){}
 
+        public User (User toCopy)
+        {
+            userName = toCopy.userName;
+            password = toCopy.password;
+            wins = toCopy.wins;
+            losses = toCopy.losses;
+            averageTurns = toCopy.averageTurns;
+            turns = toCopy.turns;
+        }
         public User(string userName, string password)
         {
             this.userName = userName;
@@ -84,22 +93,26 @@ namespace Wordle
 
             var newStringWriter = new StringWriter();
             Serializer.Serialize(newStringWriter, records);
-
-            File.WriteAllText("./xml", newStringWriter.ToString());
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            File.WriteAllText(projectDirectory + "./Userzone/xml", newStringWriter.ToString());
            
             newStringWriter.Close();
         }
 
         public List<User> ReadFromXml()
         {
-            StreamReader reader = new StreamReader("./xml");
+            //StreamReader reader = new StreamReader("C:/Users/TOWER/Desktop/revrev/SkylerOB/WordleTrC/Userzone/xml");// "./xml");
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            StreamReader reader = new StreamReader(projectDirectory + "./Userzone/xml");
             var records = (List<User>?)Serializer.Deserialize(reader);
             reader.Close();
             return records;
         }
 
 
-        /*** code additions ***/
+         /** my additions  **/
         /* override Equals */
         public bool Equals(User user2)
         {
@@ -147,11 +160,12 @@ namespace Wordle
         {
             List<User> players = new List<User>();
             User player1 = new User("name","pass");
-            
+            User player2 = new User(player1);
 
-            foreach(User U in players) Console.WriteLine(U.userName);
-            //players.Add(player1);
-            Console.WriteLine(player1.CheckExistingPlayerByCred(players,player1)?"same":"who?");
+            players.Add(player1);
+            foreach (User U in players) Console.WriteLine(U.userName);
+            Console.WriteLine(player1.CheckExistingPlayerByCred(players, player2) ? "same" : "who?");
+            Console.WriteLine(player1==player2 ? "same" : "who?");
             player1.UpdateRecord(true, 5);
             Console.WriteLine(player1.wins);
             player1.AddNewPlaythrough(players);

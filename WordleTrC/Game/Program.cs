@@ -3,8 +3,11 @@
     {
         public static void Main(string[] args)
         {
-            string fpath="./testFile.txt";
-            string playerHistory = "./.history";
+            //string fpath = "C:/Users/TOWER/Desktop/revrev/SkylerOB/WordleTrC/Game/testFile.txt";
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            string fpath = projectDirectory + "./testFile.txt";
+            string playerHistory = projectDirectory + "./.history";
 
             string[] words = File.ReadAllLines(fpath);
 
@@ -106,7 +109,7 @@ Console.WriteLine(secret);
             player.AddNewPlaythrough(records);
 
             player.SerializeAsXml(records);
-            Console.WriteLine(player.DisplayRecord(playerHistory, records));
+            Console.WriteLine(player.DisplayRecord(records));
 
         }
 
