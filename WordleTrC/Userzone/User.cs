@@ -4,10 +4,11 @@ using System.Xml.Serialization;
 
 namespace Wordle
 {
-    public class User
+    public class User : IEquatable<User>
     {
         // Fields
         [XmlAttribute]
+        public int UserId { get; set; }
         public string userName { get; set; }
         public string password { get; set; }
         public int wins { get; set; }
@@ -114,10 +115,39 @@ namespace Wordle
 
          /** my additions  **/
         /* override Equals */
-        public bool Equals(User user2)
+        public override bool Equals(object? obj2)
         {
-            if(user2 == null) return false;
-            return (this.userName == user2.userName) && (this.password == user2.password);
+            // check incoming object
+            if (obj2 == null || GetType() != obj2.GetType())
+            {
+                Console.WriteLine("bad");
+                return false;
+            }
+
+            User? user2 = obj2 as User;
+            if (this.userName == user2.userName)
+            {
+                Console.WriteLine("name same");
+                if (this.password == user2.password)
+                {
+                    Console.WriteLine("pass same");
+                    return (1 == 1);
+                }
+                else Console.WriteLine("pass what");
+            }
+            Console.WriteLine("who's that");
+            return (1 == 0);
+        }
+        
+        public override int GetHashCode()
+        {
+            return userName.GetHashCode();
+        }
+        
+        public bool Equals(User other)
+        {
+            if (other == null) return false;
+            return (this.userName.Equals(other.userName) && this.password.Equals(other.password));
         }
 
         /* Search List for the given player(which may only be a name and pass) and return the full info */
@@ -158,14 +188,18 @@ namespace Wordle
         /* Main for unit testing */
         public static void Main()
         {
+            Console.WriteLine("Let's begin");
             List<User> players = new List<User>();
             User player1 = new User("name","pass");
             User player2 = new User(player1);
+            Console.WriteLine(player1 == player2 ? "same" : "who?");
+            Console.WriteLine(player1.Equals(player2) ? "same" : "who?");
+
+            return;
 
             players.Add(player1);
             foreach (User U in players) Console.WriteLine(U.userName);
             Console.WriteLine(player1.CheckExistingPlayerByCred(players, player2) ? "same" : "who?");
-            Console.WriteLine(player1==player2 ? "same" : "who?");
             player1.UpdateRecord(true, 5);
             Console.WriteLine(player1.wins);
             player1.AddNewPlaythrough(players);
