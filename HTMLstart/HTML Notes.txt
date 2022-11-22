@@ -1,0 +1,295 @@
+22-Nov-2022:
+============
+HTML:
+=====
+HyperText Markup Language.
+Quite simple language.
+It contains different "elements" that are used to structure a web page.
+
+<html>
+	<body>
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+		
+		<p>This is a paragraph</p>
+		
+		<div>
+			<h3>This is a list:</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+
+			<ol>
+				<li>Apple</li>
+				<li>Orange</li>
+				<li>Banana</li>
+			</ol>
+
+		</div>
+		
+		<button onclick="alert('Hello there!');">click Me</button>
+	</body>
+</html>
+
+Very similar to XML.
+Rules:
+- Matching opening and closing tags (elements).
+- <HTML> tag can occur only once.
+- <BODY> tag can occur only once.
+- Other tags can occur any number of times.
+
+What are HTML Elements?:
+-------------------
+Elements start an opening tag that contains the name of the element. It's closing tag' element name is preceded with a "/" (forward slash). And the actual content of the element is specified between the opening and closing tags.
+
+There are some elements that do not follow this pattern of having an opening a matching closing tag.
+For e.g.;
+<img>
+<br />
+
+You can also have nested elements, i.e.; elements within elements.
+For e.g.;
+<div>
+	<h3>This is a list:</h3>
+	<ul>
+		<li>One</li>
+		<li>Two</li>
+		<li>Three</li>
+	</ul>
+
+	<ol>
+		<li>Apple</li>
+		<li>Orange</li>
+		<li>Banana</li>
+	</ol>
+
+</div>
+
+What are HTML Attributes?:
+--------------------------
+<img src="location of the image" width="100">
+Here, "src" and "width" are attributes of the "img" element.
+Some attributes are common for all elements, whereas some elements have specific attributes that may not work with other elements.
+
+Another example is the button element:
+<button onclick="alert('Hello there!');">Click Me</button>
+Here, "onlick" is an attribute.
+
+Some common HTML elements:
+<div>	<h1> to <h6>	<p>	<img>	<ol>	<ul>	<li>
+
+Section Elements:
+<div>	<span>	(was already there)
+new ones: <header>	<footer>	<nav>	<main>	<section>
+
+Text content elements:
+<h1> to <h6>	<p>	<ol>	<ul>	<li>
+
+For Images and links:
+<img>	<a> (create hyperlinks)
+
+Not all elements break to the next line. Some remain on the same line after rendering their content.
+
+Block-level Elements vs Inline Elements:
+----------------------------------------
+Block-level elements are those that always start on a new line and take up the full width that is available. Foe e.g.; <div>, <p>
+Inline elements are those that do not start on a new line (they continue from wherever the previous element ended) and only take up as much width as necessary. For e.g.; <span> <b> <i> <img> <a> <label> <textarea>.
+
+Comments in HTML:
+-----------------
+Use <!-- --> for comments.
+
+For tabular display of data, use the <table> element. Block-level element.
+<table> works with some nested elements like <tr> <td> <th>.
+<table>:	creates a table.
+<tr>:		defines a row.
+<td>:		defines a column.
+<th>:		defines a column header.
+
+Semantic Elements:
+==================
+Are those that clearly describe their meaning in a human-and-machine readable way.
+
+<header>
+<footer>
+<article>
+<details>
+<main>
+<nav>
+<summary>
+<section>
+
+Metatags (metadata):
+====================
+Are defined in the <head> part of the web page.
+Some tags to use in <head>:
+<title>
+<meta>
+<style>			for CSS
+<script>		for Javascript
+
+Accessiblity:
+=============
+Accessible design is that which accomodates everyone, keeping in mind people with disabilities and limitations.
+
+Semantic HTML elements are a big help to implement accessibility.
+Things to keep in mind for accessible pages:
+1. Provide "alt" text for ALL images.
+2. Well-structured HTML.
+Wrong:
+	<h4></h4>
+	<h1></h1>
+Correct:
+	<h1></h1>
+	<h4></h4>
+
+<header> and <footer> are in the right places.
+
+Do not use <li> without <ul> or <ol>.
+3. Always have a "lang" attribute for the <html> element on ALL pages.
+This identifies the primary language of the page to the browser, search engines, translation software and screen readers.
+
+If your page is in English, but if some text is in another language, then specify the "lang" attribute for that that element.
+<html lang="en">
+:
+:
+<span lang="de">Danke</span>
+</html>
+
+4. Descriptive hyperlinks.
+Click here
+Click here
+Click here
+
+ARIA Roles:
+===========
+ARIA = Accessible Rich Internet Applications.
+A suite of web standards to make user interface controls more accessible for those use assistive technolgies.
+
+<p>PANCAKE RECIPE</p>
+<div>
+	<nav role="navigation">
+		<ul>
+			<li><a href="#ingredients">Ingredients</a></li>
+			<li><a href="#steps">Steps</a></li>
+			<li><a href="#subscribe">Subscribe</a></li>
+		</ul>
+	</nav>
+</div>
+
+<header role="banner">
+<nav role="navigation">
+<footer role="contentinfo">
+
+Accessiblity starts with YOUR HTML.
+
+Styling web pages with CSS:
+===========================
+CSS: Cascading Style Sheets.
+CSS is a language to style web pages.
+Three ways to specify styles:
+1) On the page itself in the <head> as part of the nested <style> element.
+2) Apply the CSS to specific elements using the "style" attribute of the element.
+3) Define the CSS in a separate file (usually with an extension of .css) and include/import it in your html using the <link> element within the <head> element.
+
+Syntax for defining styles:
+
+selector {
+	property: value;
+	property: value;
+}
+
+Selectors can be:
+1. an element.
+2. the id of any element.
+3. the class.
+
+Element selector:
+-----------------
+h1 {
+}
+
+div {
+}
+
+p {
+}
+
+table {
+}
+
+span {
+}
+
+Id Selector:
+------------
+The id selector uses the "id" attribute of an HTML element to select and apply the CSS.
+Syntax:
+#id {
+	property: value;
+	property: value;
+}
+
+Class selector:
+---------------
+Selects the HTML element with a specific class attribute.
+Syntax:
+.classname {
+	property: value;
+	property: value;
+}
+
+Combo of selectors can be provided:
+elem.class {
+	property: value;
+	property: value;
+}
+
+elem#id {
+	property: value;
+	property: value;
+}
+
+Universal Selector:
+-------------------
+Applies to all elements on the page.
+Syntax:
+* {
+	property: value;
+	property: value;
+}
+
+Grouping selector:
+------------------
+Applies same styling to multiple elements.
+p {
+	color: red;
+	text-align: center;
+}
+
+div {
+	color: red;
+	text-align: center;
+}
+
+h2 {
+	color: red;
+	text-align: center;
+}
+
+Instead, use grouping selector:
+p, div, h2 {
+	color: red;
+	text-align: center;
+}
+
+Responsive Web Design
+=====================
+Design for the best experience for all users on all devices.
+

@@ -1,0 +1,29 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+#para1 {
+    font-family: calibri;
+    font-size: 40px;
+}
+
+.redandcenter {
+    text-align:center;
+    color:red;
+}
+
+p.center {
+    text0align:center;
+    color: yellow;
+    font0size:25;
+}

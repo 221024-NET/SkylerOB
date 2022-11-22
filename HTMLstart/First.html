@@ -1,0 +1,139 @@
+<html lang="en">
+	<body>
+		<h1 onclick="alert('H1 clicked');">Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+		
+		<a href="https://www.google.com">Click here to go to Google</a>
+		<a href="https://www.bing.com">Click here to go to Bing</a>
+		<a href="https://www.msn.com">Click here to go to MSN</a>
+		
+		<table border="1">
+			<tr>
+				<th>Sr.no.</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>City</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>John</td>
+				<td>Smith</td>
+				<td>Reston</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Mary</td>
+				<td>Jane</td>
+				<td>Dallas</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Joe</td>
+				<td>Seeker</td>
+				<td>Boston</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Kara</td>
+				<td>Pride</td>
+				<td>Seattle</td>
+			</tr>
+		</table>
+
+		<br />
+	
+		<div>
+			<h3>Without table</h3>
+			<label>Firstname:</label>
+			<input type="text" placeholder="Enter your firstname" />
+			<br />
+			<label>Lastname:</label>
+			<input type="text" placeholder="Enter your lastname" />
+			<br />
+			<button onclick="alert('Thank you for your registration.');">Register</button>
+		</div>
+		
+		<br />
+		<form onsubmit="alert('submitted');">
+		<div>
+			<h3>With table</h3>
+			<table>
+				<tr>
+					<td>
+						<label>Firstname:</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Enter your firstname" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Lastname:</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Enter your lastname" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>City:</label>
+					</td>
+					<td>
+						<input type="text" placeholder="Enter your city" />					
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" >Register</button>
+						<button type="reset" >Reset</button>
+						<!-- <input type="button" onclick="alert('Don't want to register?');"> -->
+					</td>
+				</tr>
+			</table>
+		</div>
+		</form>
+		
+		<div>
+			<p>This is a block-level element <span>This is an inline element</span>
+				<b>This is bold</b>
+				<i>This is italics</i>
+				<button>Click Me</button>
+				<!-- <a href="http://www.google.com">Google</a> -->
+				<label>Enter your Name:</label>
+				<textarea>This is a a text area that may be use for large texts.</textarea>
+				<img src="https://plus.unsplash.com/premium_photo-1661396906932-2c07ee7ea835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2FtcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" width="50" height="50">
+			</p>
+		</div>
+		
+		<br />
+		<p onclick="alert('p clicked');">This is a paragraph</p>
+		<img src="https://plus.unsplash.com/premium_photo-1661396906932-2c07ee7ea835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2FtcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" width="200" height="200" alt="Two women fishing">
+		
+		<div>
+			<h3>This is a list:</h3>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+
+			<ol>
+				<li>Apple</li>
+				<li>Orange</li>
+				<li>Banana</li>
+			</ol>
+		</div>
+		
+		<p>Not preferred to have &lt;li&gt; outside of &lt;ol&gt; or &lt;ul&gt;:</p>
+		<li>Outside line item</li>
+		<li>Another Outside line item</li>
+
+		<button onclick="alert('Hello there!');">Click Me</button>
+		<br/>
+		<a href="http://www.google.com">Go to Google</a>
+	</body>
+</html>
