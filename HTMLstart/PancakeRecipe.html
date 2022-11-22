@@ -1,0 +1,88 @@
+<html>
+    <body>
+        <header>
+            <div>PANCAKE RECIPE</div>
+            <nav>
+                <ol>
+                    <li><a href="#ingredients">Ingredients</a></li>
+                    <li><a href="steps">Cooking Steps</a></li>
+                    <a href="subscribe">Subscribe-></a>
+                </ol>
+                
+            </nav>
+        </header>
+
+        <main>
+            <h1>Good Old Fashioned Pancakes</h1>
+            <img src="" height="150" width="150"
+            alt="These pancakes are mouthwatering, but you wouldn't know because the image didn't load">
+
+            <h2 id="ingredients">Ingredients</h2>
+            <ul>
+                <li><input type="checkbox" />1 1/2 cup of all-purpose flour</li>
+                <li><input type="checkbox" />3 1/2 tsp of baking powder</li>
+                <li><input type="checkbox" />1 tsp sugar</li>
+                <li><input type="checkbox" />1 1/4 cups of milk</li>
+                <li><input type="checkbox" />1 egg</li>
+                <li><input type="checkbox" />1 tsp soft butter</li>
+                
+            </ul>
+
+            <h2 id="steps"=Cooking Steps></h2>
+            <h4>Step 1</h4>
+            <p>
+                In a large bowl, sift together the flour, baking power, salt, and sugar.
+                Make a well in the center and pour in the milk, egg, and butter
+            </p>
+            <h4>Step 2</h4>
+            <p>
+                Heat a lightly oiled girddle or frying pan over medium-high heat. Pour the batter onto the girddle
+                using around 1/4 cup for each pancake. Brown on both sides and serve hot.
+            </p>
+        </main>
+
+        <hr /> <!-- horizontal line -->
+        <footer>
+            <h6 id="subscribe">Subscribe</h6>
+            
+            <form onsubmit="alert('You are now subscribed for awesome recipes.');">
+
+
+                <table>
+                    <tr>
+                        <td
+                            <label> Firstname:<label>
+                        </td>
+                        <td>
+                            <input type="text" placholder="Enter your firstname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Lastname:<label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter your lastname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>City:<label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Enter your city" />
+                        </td>
+                    </tr>
+                </table>
+                <Button type="submit">Register</button>
+                    <!-- onclick="alert('Thank you for registering.');" -->
+                    <Button type="reset">Clear</button>
+                    <!--onclick="alert('Table cleared.');"-->
+                <!--input type="text" placeholder = "Enter email address"/-->
+                <!--button>Submit</button-->
+            </form>
+            <br />
+            <div>&copy;Recipes from the internet</div>
+        </footer>
+    </body>
+</html>
