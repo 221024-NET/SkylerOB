@@ -23,7 +23,13 @@ p {
 }
 
 p.center {
-    text0align:center;
+    text-align:center;
+    color: yellow;
+    font0size:25;
+}
+
+p#right {
+    text-align:center;
     color: yellow;
     font0size:25;
 }
