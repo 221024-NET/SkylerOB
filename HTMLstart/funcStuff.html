@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Declaring multiple instances of the same function "object"</p>
+        <script>
+            let globe = 1000;
+
+            function theObject(p1) {
+                let location = 10;
+
+                function theInternal(p2) {
+                    location = location + p2;
+                }
+            }
+
+            var obj1 = new theObject(1);
+            obj1.theInternal(2);
+            alert(obj1.location);
+        </script>
+    </body>
+</html>
